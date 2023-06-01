@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/authserver
+    driver-class-name: org.postgresql.Driver
+    username: gfmn
+    password: 1012
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+
+auth-server:
+  secret: "576E5A7234753778214125442A472D4B6150645367556B58703273357638792F"
