@@ -1,4 +1,4 @@
-package cl.gmanquilefn.security.auth;
+package cl.gmanquilefn.security.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterRequest {
-    private String username;
-    private String password;
+public class AuthResponse {
+    private String token;
 }

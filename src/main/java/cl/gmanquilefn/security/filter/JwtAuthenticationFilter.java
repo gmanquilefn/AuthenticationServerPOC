@@ -1,6 +1,6 @@
-package cl.gmanquilefn.security.config;
+package cl.gmanquilefn.security.filter;
 
-import cl.gmanquilefn.security.jwt.JwtService;
+import cl.gmanquilefn.security.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

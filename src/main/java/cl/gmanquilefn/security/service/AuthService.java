@@ -1,9 +1,11 @@
-package cl.gmanquilefn.security.auth;
+package cl.gmanquilefn.security.service;
 
-import cl.gmanquilefn.security.jwt.JwtService;
-import cl.gmanquilefn.security.user.Role;
-import cl.gmanquilefn.security.user.User;
-import cl.gmanquilefn.security.user.UserRepository;
+import cl.gmanquilefn.security.model.AuthRequest;
+import cl.gmanquilefn.security.model.AuthResponse;
+import cl.gmanquilefn.security.model.RegisterRequest;
+import cl.gmanquilefn.security.entity.Role;
+import cl.gmanquilefn.security.entity.UserEntity;
+import cl.gmanquilefn.security.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -21,7 +23,7 @@ public class AuthService {
 
     public AuthResponse register(RegisterRequest request) {
 
-        var user = User.builder()
+        var user = UserEntity.builder()
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)

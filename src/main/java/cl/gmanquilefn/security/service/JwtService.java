@@ -1,4 +1,4 @@
-package cl.gmanquilefn.security.jwt;
+package cl.gmanquilefn.security.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

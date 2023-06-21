@@ -1,5 +1,9 @@
-package cl.gmanquilefn.security.auth;
+package cl.gmanquilefn.security.controller;
 
+import cl.gmanquilefn.security.model.AuthRequest;
+import cl.gmanquilefn.security.model.AuthResponse;
+import cl.gmanquilefn.security.model.RegisterRequest;
+import cl.gmanquilefn.security.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

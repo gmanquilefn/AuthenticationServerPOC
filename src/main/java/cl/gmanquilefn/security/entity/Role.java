@@ -1,4 +1,4 @@
-package cl.gmanquilefn.security.user;
+package cl.gmanquilefn.security.entity;
 
 public enum Role {
     USER,
