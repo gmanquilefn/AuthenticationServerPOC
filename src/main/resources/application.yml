@@ -1,3 +1,6 @@
+server:
+  port: 9000
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/authserver
@@ -8,6 +11,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     database: postgresql
+    show-sql: true
 
 auth-server:
   secret: "576E5A7234753778214125442A472D4B6150645367556B58703273357638792F"

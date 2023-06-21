@@ -2,7 +2,6 @@ package cl.gmanquilefn.security.service;
 
 import cl.gmanquilefn.security.model.AuthRequest;
 import cl.gmanquilefn.security.model.AuthResponse;
-import cl.gmanquilefn.security.model.RegisterRequest;
 import cl.gmanquilefn.security.entity.Role;
 import cl.gmanquilefn.security.entity.UserEntity;
 import cl.gmanquilefn.security.repository.UserRepository;
@@ -21,11 +20,11 @@ public class AuthService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    public AuthResponse register(RegisterRequest request) {
+    public AuthResponse register(AuthRequest request) {
 
         var user = UserEntity.builder()
-                .username(request.getUsername())
-                .password(passwordEncoder.encode(request.getPassword()))
+                .username(request.username())
+                .password(passwordEncoder.encode(request.password()))
                 .role(Role.USER)
                 .build();
 
@@ -40,11 +39,11 @@ public class AuthService {
 
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                request.getUsername(),
-                request.getPassword())
+                request.username(),
+                request.password())
         );
 
-        var user = userRepo.findByUsername(request.getUsername()).orElseThrow();
+        var user = userRepo.findByUsername(request.username()).orElseThrow();
 
         var jwtToken = jwtService.generateToken(user);
 
